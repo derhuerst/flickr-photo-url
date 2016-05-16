@@ -9,5 +9,9 @@
 	"homepage":    "https://github.com/derhuerst/flickr-photo-url",
 	"repository":  "derhuerst/flickr-photo-url",
 	"license":     "ISC",
-	"engines":     {"node": ">=4"}
+	"engines":     {"node": ">=4"},
+	"dependencies": {
+		"got": "^6.3",
+		"cheerio": "^0.20"
+	}
 }
