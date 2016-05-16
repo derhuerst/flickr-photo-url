@@ -13,5 +13,13 @@
 	"dependencies": {
 		"got": "^6.3",
 		"cheerio": "^0.20"
+	},
+	"devDependencies": {
+		"tape": "^4.5.1",
+		"tap-min": "^1.1"
+	},
+	"scripts": {
+		"test":       "tape test.js | tap-min",
+		"prepublish": "npm test"
 	}
 }

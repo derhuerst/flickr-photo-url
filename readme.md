@@ -5,7 +5,9 @@ To get a simple file, you need a Flickr API key. To get a Flickr API key, you ne
 This module allows your to **download Flickr photos without API key** by giving you the direct URL of the photo.
 
 [![npm version](https://img.shields.io/npm/v/flickr-photo-url.svg)](https://www.npmjs.com/package/flickr-photo-url)
+[![build status](https://img.shields.io/travis/derhuerst/flickr-photo-url.svg)](https://travis-ci.org/derhuerst/flickr-photo-url)
 [![dependency status](https://img.shields.io/david/derhuerst/flickr-photo-url.svg)](https://david-dm.org/derhuerst/flickr-photo-url)
+[![dev dependency status](https://img.shields.io/david/dev/derhuerst/flickr-photo-url.svg)](https://david-dm.org/derhuerst/flickr-photo-url#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/flickr-photo-url.svg)
 
 
