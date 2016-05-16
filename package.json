@@ -1,0 +1,13 @@
+{
+	"name":        "flickr-photo-url",
+	"description": "Download Flickr photos without API key.",
+	"version":     "0.1.0",
+	"main":        "index.js",
+	"files":       ["index.js"],
+	"keywords":    ["flickr", "download", "photos", "url", "source"],
+	"author":      "Jannis R <mail@jannisr.de>",
+	"homepage":    "https://github.com/derhuerst/flickr-photo-url",
+	"repository":  "derhuerst/flickr-photo-url",
+	"license":     "ISC",
+	"engines":     {"node": ">=4"}
+}
