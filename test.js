@@ -1,21 +1,26 @@
 'use strict'
 
-const test = require('tape')
+const assert = require('assert')
+const test = require('tape-co').default
 const got  = require('got')
+
 const url  = require('./index')
 
 
 
-test('works', (t) => {
-	t.plan(3)
-
-	url('gilad_rom', 24148019753).catch(t.fail)
-	.then((url) => got(url)).catch(t.fail)
-	.then((res) => { // request successful
+const validUrl = (url) =>
+	got(url).then((res) => {
 		res.destroy()
-		t.ok(200 <= res.statusCode, 'non-2xx status code')
-		t.ok(res.statusCode < 300,  'non-2xx status code')
+		assert(200 <= res.statusCode, 'non-2xx status code')
+		assert(res.statusCode < 300,  'non-2xx status code')
 		const type = res.headers['content-type'].substr(0, 5)
-		t.equal(type, 'image', 'non-image mime type')
-	})
+		assert.strictEqual(type, 'image', 'non-image mime type')
+		return true
+	}, (err) => {throw err})
+
+
+
+test('works', function* (t) {
+	const original = yield url('gilad_rom', 24148019753)
+	t.ok(yield validUrl(original), 'valid url')
 })
