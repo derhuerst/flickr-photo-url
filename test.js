@@ -24,3 +24,25 @@ test('works', function* (t) {
 	const original = yield url('gilad_rom', 24148019753)
 	t.ok(yield validUrl(original), 'valid url')
 })
+
+
+
+test('works with size `m`', function* (t) {
+	const [original, medium] = yield Promise.all([
+		url('gilad_rom', 24148019753),
+		url('gilad_rom', 24148019753, 'm')
+	])
+	t.ok(medium !== original, 'generated the original size url')
+	t.ok(yield validUrl(medium), 'valid url')
+})
+
+
+
+test('works with size `small`', function* (t) {
+	const [original, small] = yield Promise.all([
+		url('gilad_rom', 24148019753),
+		url('gilad_rom', 24148019753, url.sizes.small)
+	])
+	t.ok(small !== original, 'generated the original size url')
+	t.ok(yield validUrl(small), 'valid url')
+})

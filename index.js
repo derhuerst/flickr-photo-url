@@ -7,12 +7,16 @@ const agent = 'derhuerst/flickr-photo-url'
 
 const sizes = ['sq', 'q', 't', 's', 'n', 'm', 'z', 'c', 'l', 'h', 'k', 'o']
 sizes.original = 'o'
+sizes.large = 'k'
+sizes.medium = 'c'
+sizes.small = 'n'
+sizes.square = 'q'
 
 const url = (user, id, size) => new Promise((yay, nay) => {
 	if ('string' !== typeof user) return nay(new Error('invalid user'))
 	if ('number' !== typeof id) return nay(new Error('invalid photo id'))
 	if ('number' === typeof size) size = sizes[size] || sizes.original
-	else if ('string' === typeof size && sizes.indexOf(size) < 0)
+	else if ('string' === typeof size && sizes.indexOf(size) < 0 && !(size in sizes))
 		return nay(new Error('invalid size'))
 
 	return got(`https://www.flickr.com/photos/${user}/${id}/sizes/${size}/`,
