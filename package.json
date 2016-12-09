@@ -12,7 +12,7 @@
 	"engines":     {"node": ">=4"},
 	"dependencies": {
 		"got": "^6.3",
-		"cheerio": "^0.20"
+		"cheerio": "^0.22.0"
 	},
 	"devDependencies": {
 		"tape-co": "^1",
