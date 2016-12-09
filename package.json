@@ -16,7 +16,7 @@
 	},
 	"devDependencies": {
 		"tape-co": "^1",
-		"tap-min": "^1.1"
+		"tap-min": "derhuerst/tap-min"
 	},
 	"scripts": {
 		"test":       "node test.js | tap-min",
