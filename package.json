@@ -12,11 +12,11 @@
 	"engines":     {"node": ">=4"},
 	"dependencies": {
 		"got": "^7.0.0",
-		"cheerio": "^0.22.0"
+		"cheerio": "^1.0.0-rc.1"
 	},
 	"devDependencies": {
 		"tape-co": "^1",
-		"tap-min": "derhuerst/tap-min"
+		"tap-min": "^1.2.0"
 	},
 	"scripts": {
 		"test":       "node test.js | tap-min",
