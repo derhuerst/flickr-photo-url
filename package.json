@@ -1,25 +1,35 @@
 {
-	"name":        "flickr-photo-url",
+	"name": "flickr-photo-url",
 	"description": "Download Flickr photos without API key.",
-	"version":     "1.0.0",
-	"main":        "index.js",
-	"files":       ["index.js"],
-	"keywords":    ["flickr", "download", "photos", "url", "source"],
-	"author":      "Jannis R <mail@jannisr.de>",
-	"homepage":    "https://github.com/derhuerst/flickr-photo-url",
-	"repository":  "derhuerst/flickr-photo-url",
-	"license":     "ISC",
-	"engines":     {"node": ">=4"},
+	"version": "1.0.0",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"flickr",
+		"download",
+		"photos",
+		"url",
+		"source"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/flickr-photo-url",
+	"repository": "derhuerst/flickr-photo-url",
+	"license": "ISC",
+	"engines": {
+		"node": ">=4"
+	},
 	"dependencies": {
 		"got": "^8.0.0",
 		"cheerio": "^1.0.0-rc.1"
 	},
 	"devDependencies": {
-		"tape-co": "^1",
-		"tap-min": "^1.2.0"
+		"tap-min": "^1.2.0",
+		"tape-co": "^1"
 	},
 	"scripts": {
-		"test":       "node test.js | tap-min",
-		"prepublish": "npm test"
+		"test": "node test.js | tap-min",
+		"prepublishOnly": "npm test"
 	}
 }

@@ -4,7 +4,7 @@ const assert = require('assert')
 const test = require('tape-co').default
 const got  = require('got')
 
-const url  = require('./index')
+const url  = require('.')
 
 
 

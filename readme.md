@@ -2,7 +2,7 @@
 
 To get a simple file, you need a Flickr API key. To get a Flickr API key, you need a Flickr account. A Flickr account is a Yahoo account. To get a Yahoo account, you need to give your full name, birth date & phone number.
 
-This module allows your to **download Flickr photos without API key** by giving you the direct URL of the photo.
+In opposition to [`flickr-photo-urls`](https://github.com/npm-flickr/flickr-photo-urls#flickr-photo-urls), **this module gives you the direct URL of any Flickr photo without an API key.**.
 
 [![npm version](https://img.shields.io/npm/v/flickr-photo-url.svg)](https://www.npmjs.com/package/flickr-photo-url)
 [![build status](https://img.shields.io/travis/derhuerst/flickr-photo-url.svg)](https://travis-ci.org/derhuerst/flickr-photo-url)
@@ -28,7 +28,7 @@ url(user, photoId, [size])
 ```js
 const url = require('flickr-photo-url')
 
-url('gilad_rom', '24148019753', url.sizes.original)
+url('gilad_rom', 24148019753, url.sizes.original)
 .catch(console.error).then(console.log)
 // -> https://c2.staticflickr.com/2/1534/24148019753_bc3bb60f50_o.jpg
 ```
