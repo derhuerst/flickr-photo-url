@@ -2,21 +2,30 @@
 
 const assert = require('assert')
 const test = require('tape-co').default
-const got  = require('got')
+const Promise = require('pinkie-promise')
+const {fetch} = require('fetch-ponyfill')({Promise})
 
 const url  = require('.')
 
 
 
-const validUrl = (url) =>
-	got(url).then((res) => {
-		res.destroy()
-		assert(200 <= res.statusCode, 'non-2xx status code')
-		assert(res.statusCode < 300,  'non-2xx status code')
-		const type = res.headers['content-type'].substr(0, 5)
+const validUrl = (url) => {
+	return fetch(url, {
+		method: 'GET',
+		redirect: 'follow',
+		headers: {
+			'user-agent': 'derhuerst/flickr-photo-url test'
+		}
+	})
+	.then((res) => {
+		assert(200 <= res.status, 'non-2xx status code')
+		assert(res.status < 300, 'non-2xx status code')
+		const type = res.headers.get('content-type').substr(0, 5)
 		assert.strictEqual(type, 'image', 'non-image mime type')
-		return true
-	}, (err) => {throw err})
+
+		return true // todo: abort res
+	})
+}
 
 
 
