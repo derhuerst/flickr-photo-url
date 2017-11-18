@@ -4,7 +4,8 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"files": [
-		"index.js"
+		"index.js",
+		"src"
 	],
 	"keywords": [
 		"flickr",
@@ -26,11 +27,14 @@
 		"pinkie-promise": "^2.0.1"
 	},
 	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
 		"tap-min": "^1.2.0",
 		"tape-co": "^1"
 	},
 	"scripts": {
+		"build": "babel src/index.js --presets env --out-file index.js",
 		"test": "node test.js | tap-min",
-		"prepublishOnly": "npm test"
+		"prepublishOnly": "npm run build && npm test"
 	}
 }
