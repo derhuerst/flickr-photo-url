@@ -3,7 +3,7 @@
 const assert = require('assert')
 const test = require('tape-co').default
 const Promise = require('pinkie-promise')
-const {fetch} = require('fetch-ponyfill')({Promise})
+const fetch = require('fetch-ponyfill')({Promise: Promise}).fetch
 
 const url  = require('.')
 
@@ -37,10 +37,13 @@ test('works', function* (t) {
 
 
 test('works with size `m`', function* (t) {
-	const [original, medium] = yield Promise.all([
+	const res = yield Promise.all([
 		url('gilad_rom', 24148019753),
 		url('gilad_rom', 24148019753, 'm')
 	])
+	const original = res[0]
+	const medium = res[1]
+
 	t.ok(medium !== original, 'generated the original size url')
 	t.ok(yield validUrl(medium), 'valid url')
 })
@@ -48,10 +51,13 @@ test('works with size `m`', function* (t) {
 
 
 test('works with size `small`', function* (t) {
-	const [original, small] = yield Promise.all([
+	const res = yield Promise.all([
 		url('gilad_rom', 24148019753),
 		url('gilad_rom', 24148019753, url.sizes.small)
 	])
+	const original = res[0]
+	const medium = res[1]
+
 	t.ok(small !== original, 'generated the original size url')
 	t.ok(yield validUrl(small), 'valid url')
 })
