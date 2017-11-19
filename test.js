@@ -56,7 +56,7 @@ test('works with size `small`', function* (t) {
 		url('gilad_rom', 24148019753, url.sizes.small)
 	])
 	const original = res[0]
-	const medium = res[1]
+	const small = res[1]
 
 	t.ok(small !== original, 'generated the original size url')
 	t.ok(yield validUrl(small), 'valid url')
