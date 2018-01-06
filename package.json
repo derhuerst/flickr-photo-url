@@ -24,7 +24,7 @@
 	"dependencies": {
 		"cheerio": "^1.0.0-rc.1",
 		"fetch-ponyfill": "^4.1.0",
-		"pinkie-promise": "^2.0.1"
+		"pinkie-promise": "^2.0.2"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
