@@ -19,7 +19,7 @@
 	"repository": "derhuerst/flickr-photo-url",
 	"license": "ISC",
 	"engines": {
-		"node": ">=4"
+		"node": ">=6"
 	},
 	"dependencies": {
 		"cheerio": "^1.0.0-rc.1",
