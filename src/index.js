@@ -38,7 +38,9 @@ const url = (user, id, s) => {
 	})
 	.then((html) => {
 		const $ = cheerio.load(html)
-		return $('#allsizes-photo img').attr('src')
+		const url = $('#allsizes-photo img').attr('src')
+		if (!url) throw new Error('failed to extract the URL from the Flickr page')
+		return url
 	})
 }
 
