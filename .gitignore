@@ -1,6 +1,8 @@
 .DS_Store
 Thumbs.db
 
+.vscode
+
 .nvm-version
 node_modules
 npm-debug.log
