@@ -6,6 +6,7 @@ const { DomHandler, DomUtils, Parser } = require('htmlparser2')
 
 const agent = 'derhuerst/flickr-photo-url'
 
+// Official size suffixes info: https://www.flickr.com/services/api/misc.urls.html
 const sizes = ['sq', 'q', 't', 's', 'n', 'm', 'z', 'c', 'l', 'h', 'k', 'o']
 sizes.original = 'o'
 sizes.large = 'k'
