@@ -22,8 +22,8 @@
 		"node": ">=6"
 	},
 	"dependencies": {
-		"cheerio": "^1.0.0-rc.1",
 		"fetch-ponyfill": "^6.0.0",
+		"htmlparser2": "^4.0.0",
 		"pinkie-promise": "^2.0.1"
 	},
 	"devDependencies": {

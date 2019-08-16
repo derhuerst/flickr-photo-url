@@ -2,7 +2,7 @@
 
 const Promise = require('pinkie-promise')
 const {fetch} = require('fetch-ponyfill')({Promise})
-const cheerio = require('cheerio')
+const {DomHandler, DomUtils, Parser} = require('htmlparser2')
 
 const agent = 'derhuerst/flickr-photo-url'
 
@@ -37,11 +37,20 @@ const url = (user, id, s) => {
 		return res.text()
 	})
 	.then((html) => {
-		const $ = cheerio.load(html)
-		const url = $('#allsizes-photo img').attr('src')
+		const dom = parseHtml(html)
+		const container = DomUtils.getElementById('allsizes-photo', dom, true)
+		const img = DomUtils.findOne(el => el.tagName === 'img', [container], true)
+		const url = img.attribs.src
 		if (!url) throw new Error('failed to extract the URL from the Flickr page')
 		return url
 	})
 }
 
 module.exports = Object.assign(url, {sizes})
+
+function parseHtml(html, options = {}) {
+function parseHtml (html, options = {}) {
+	const handler = new DomHandler(null, options)
+	new Parser(handler, options).end(html)
+	return handler.dom
+}
