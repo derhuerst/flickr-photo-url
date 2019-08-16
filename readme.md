@@ -9,6 +9,7 @@ In opposition to [`flickr-photo-urls`](https://github.com/npm-flickr/flickr-phot
 [![dependency status](https://img.shields.io/david/derhuerst/flickr-photo-url.svg)](https://david-dm.org/derhuerst/flickr-photo-url)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/flickr-photo-url.svg)](https://david-dm.org/derhuerst/flickr-photo-url#info=devDependencies)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![install size](https://packagephobia.now.sh/badge?p=flickr-photo-url)](https://packagephobia.now.sh/result?p=flickr-photo-url)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/flickr-photo-url.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 [![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
