@@ -27,13 +27,16 @@
 		"pinkie-promise": "^2.0.1"
 	},
 	"devDependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-preset-env": "^1.6.1",
+		"@babel/cli": "^7.5.5",
+		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
 		"tap-min": "^1.2.0",
 		"tape-co": "^1"
 	},
 	"scripts": {
 		"build": "babel src/index.js --presets env --out-file index.js",
+		"build": "babel src/index.js --presets @babel/preset-env --out-file index.js",
+		"pretest": "npm run build",
 		"test": "node test.js | tap-min",
 		"prepublishOnly": "npm run build && npm test"
 	}
